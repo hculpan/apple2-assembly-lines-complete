@@ -7,25 +7,28 @@
         ORG $0300
 
 *
-KYBD    EQU $C000
-STROBE  EQU $C010
+KYBD        EQU $C000
+STROBE      EQU $C010
 
-HCOLOR    EQU $F6F0
-HGR       EQU $F3E2
-HPLOT     EQU $F457
-HPOSN     EQU $F411
-HLIN      EQU $F534
-ROT       EQU $F9
-SCALE     EQU $E7
-SHNUM     EQU $F730
-DRAW      EQU $F601
-PTR       EQU $E8
-TEXTON    EQU $C051
-TEXTOFF   EQU $C050
-HIRESON   EQU $C057
-HIRESOFF  EQU $C056
-MIXEDOFF  EQU $C052
-PAGE2OFF  EQU $C054
+HCOLOR      EQU $F6F0
+HGR         EQU $F3E2
+HGR2        EQU $F3D8
+HPLOT       EQU $F457
+HPOSN       EQU $F411
+HLIN        EQU $F534
+ROT         EQU $F9
+SCALE       EQU $E7
+SHNUM       EQU $F730
+DRAW        EQU $F601
+PTR         EQU $E8
+TEXTON      EQU $C051
+TEXTOFF     EQU $C050
+HIRESON     EQU $C057
+HIRESOFF    EQU $C056
+MIXEDOFF    EQU $C052
+PAGE2OFF    EQU $C054
+STORE80OFF  EQU $C000
+CLRAN3      EQU $C05F
 
 ENTRY   JMP START
 TABLE   HEX 010004
@@ -34,7 +37,7 @@ TABLE   HEX 010004
         HEX 15361E
         HEX 0700
 
-START   JSR HGR       ; CLR SCRN
+START   JSR HGR2      ; CLR SCRN
         LDX #$03      ; WHITE = 3
         JSR HCOLOR
 
@@ -48,7 +51,8 @@ BORDER  LDA #$00      ; Y = 0
 
         LDA #$17
         LDX #$01      ; X = 279
-        LDY #$9F      ; Y = 159
+        ;LDY #$9F      ; Y = 159
+        LDY #$BF      ; Y = 191
         JSR HLIN      ; HLIN TO 279,159
 
         JMP WAIT
