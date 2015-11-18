@@ -1,6 +1,6 @@
 PGM=ch18
 AC=java -jar ../AppleCommander-1.3.5.13.jar
-START_ADDRESS=0x6000
+START_ADDRESS=0x0300
 
 MERLIN32_HOME="c:/users/usucuha/retrocomputing/Apple II/Merlin32_v1.0"
 MERLIN32_ASM=$(MERLIN32_HOME)/Windows/merlin32
