@@ -12,7 +12,7 @@ $(PGM): $(PGM).s
 
 prodos: prodos-$(PGM).po
 	$(AC) -d prodos-$(PGM).po $(PGM)
-	$(AC) -cc65 prodos-$(PGM).po $(PGM) BIN < $(PGM)
+	$(AC) -p prodos-$(PGM).po $(PGM) BIN 0x0300 < $(PGM)
 
 prodos-$(PGM).po:
 	cp prodos-raw/blank.po ./prodos-$(PGM).po
@@ -33,7 +33,7 @@ clean-all: clean clean-disk
 
 dos: $(PGM) dos-$(PGM).dsk
 	$(AC) -d dos-$(PGM).dsk $(PGM)
-	$(AC) -cc65 dos-$(PGM).dsk $(PGM) BIN < $(PGM)
+	$(AC) -p dos-$(PGM).dsk $(PGM) BIN 0x0300 < $(PGM)
 
 dos-$(PGM).dsk:
 	cp prodos-raw/dos33mst.dsk ./dos-$(PGM).dsk

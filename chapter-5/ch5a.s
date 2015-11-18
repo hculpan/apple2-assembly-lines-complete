@@ -5,7 +5,7 @@
 *                              *
 *                              *
 *       OBJ $300
-*        ORG $300
+        ORG $300
 
 CTR     EQU $06
 HOME    EQU $FC58

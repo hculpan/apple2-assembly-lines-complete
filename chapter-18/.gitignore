@@ -1,6 +1,9 @@
-adder
-adder.po
+ch18
+prodos-ch18.po
+dos-ch18.dsk
+
 a2e.hi.s
+*_Output.txt
 
 # Object files
 *.o

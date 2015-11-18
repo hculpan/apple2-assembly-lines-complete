@@ -1,6 +1,9 @@
-adder
-adder.po
+ch5a
+prodos-ch5a.po
+dos-ch5a.dsk
+
 a2e.hi.s
+*_Output.txt
 
 # Object files
 *.o
