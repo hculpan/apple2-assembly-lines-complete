@@ -1,5 +1,5 @@
 PGM=ch18
-AC=java -jar AppleCommander-1.3.5.13.jar
+AC=java -jar ../AppleCommander-1.3.5.13.jar
 START_ADDRESS=0x6000
 
 MERLIN32_HOME="c:/users/usucuha/retrocomputing/Apple II/Merlin32_v1.0"
@@ -16,9 +16,9 @@ prodos: prodos-$(PGM).po
 	$(AC) -p prodos-$(PGM).po $(PGM) BIN $(START_ADDRESS) < $(PGM)
 
 prodos-$(PGM).po:
-	cp prodos-raw/blank.po ./prodos-$(PGM).po
-	$(AC) -p prodos-$(PGM).po PRODOS SYS < prodos-raw/PRODOS
-	$(AC) -p prodos-$(PGM).po BASIC.SYSTEM SYS < prodos-raw/BASIC.SYSTEM
+	cp ../prodos-raw/blank.po ./prodos-$(PGM).po
+	$(AC) -p prodos-$(PGM).po PRODOS SYS < ../prodos-raw/PRODOS
+	$(AC) -p prodos-$(PGM).po BASIC.SYSTEM SYS < ../prodos-raw/BASIC.SYSTEM
 	$(AC) -n prodos-$(PGM).po $(PGM)
 
 clean:
@@ -37,4 +37,4 @@ dos: $(PGM) dos-$(PGM).dsk
 	$(AC) -p dos-$(PGM).dsk $(PGM) BIN $(START_ADDRESS) < $(PGM)
 
 dos-$(PGM).dsk:
-	cp prodos-raw/dos33mst.dsk ./dos-$(PGM).dsk
+	cp ../prodos-raw/dos33mst.dsk ./dos-$(PGM).dsk
